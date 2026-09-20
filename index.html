@@ -40,7 +40,6 @@
   .meta div b{display:block; color:var(--muted); font-weight:500; margin-bottom:2px; font-size:11.5px}
 
 
-  /* hero interactive */
   .hero{padding:52px 0 64px; border-bottom:1px solid var(--border)}
   .hero p.lede{font-size:14px; color:var(--muted); max-width:520px; margin-bottom:32px}
   .stage{display:flex; align-items:flex-end; justify-content:center; gap:0; padding:16px 0 8px; overflow-x:auto}
@@ -60,7 +59,6 @@
   @media (prefers-reduced-motion: reduce){.glow-pulse .core,.glow-pulse .tremor{animation:none !important}}
   .hint{text-align:center; font-size:11.5px; color:var(--muted); margin-top:22px}
 
-  /* diagrama sobre foto real */
   .diagram-section{padding:56px 0; border-bottom:1px solid var(--border); background:var(--surface)}
   .diagram-section h2{font-size:22px; margin-bottom:6px}
   .diagram-section > .wrap-wide > p.tag{font-size:11.5px; color:var(--muted); font-family:'IBM Plex Mono',monospace; margin-bottom:24px}
@@ -75,7 +73,6 @@
   .chain b{color:var(--accent)}
   .techreq{margin:32px auto 0; max-width:640px; font-size:13.5px; color:var(--muted); text-align:center}
 
-  /* materiales */
   .materiales-section{padding:56px 0; border-bottom:1px solid var(--border)}
   .materiales-section h2{font-size:22px; margin-bottom:24px}
   .mat-box{display:grid; grid-template-columns:0.85fr 1fr; gap:0; border:1px solid var(--border); border-radius:6px; overflow:hidden; max-width:820px}
@@ -88,7 +85,6 @@
   .mat-list li:last-child{border-bottom:none}
   @media(max-width:640px){.mat-box{grid-template-columns:1fr} .mat-box img{height:220px}}
 
-  /* kanban cronograma */
   .kanban-section{padding:56px 0; border-bottom:1px solid var(--border); background:var(--surface)}
   .kanban-section h2{font-size:22px; margin-bottom:6px}
   .pretag{font-size:11.5px; color:var(--muted); font-family:'IBM Plex Mono',monospace; margin-bottom:24px}
@@ -101,23 +97,29 @@
   .card.buffer{border-color:var(--accent); border-style:dashed}
   @media(max-width:900px){.board{grid-template-columns:1fr; }}
 
-  /* presupuesto */
   .budget-section{padding:56px 0; border-bottom:1px solid var(--border)}
   .budget-section h2{font-size:22px; margin-bottom:6px}
   .budget-section > .wrap-wide > p.note0{font-size:13px; color:var(--muted); max-width:600px; margin-bottom:20px}
   .tabs{display:flex; gap:8px; margin:20px 0 24px}
   .tab{font-family:'IBM Plex Mono',monospace; font-size:12px; padding:8px 15px; border-radius:20px; border:1px solid var(--border); background:var(--surface); color:var(--muted); cursor:pointer}
   .tab.active{background:var(--totem); color:#ece6da; border-color:var(--totem)}
-  table{width:100%; border-collapse:collapse; font-size:13.5px; max-width:100%}
-  table th{text-align:left; font-size:11px; color:var(--muted); font-weight:500; padding-bottom:9px; border-bottom:1px solid var(--border); font-family:'IBM Plex Mono',monospace}
-  table td{padding:9px 0; border-bottom:1px solid var(--border)}
-  table td.amt{text-align:right; font-family:'IBM Plex Mono',monospace; white-space:nowrap}
+
+  .table-wrap{overflow-x:auto; border:1px solid var(--border); border-radius:6px; background:var(--surface-2)}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:780px}
+  table th{text-align:left; font-size:11px; color:var(--muted); font-weight:500; padding:12px 16px; background:var(--surface); border-bottom:1px solid var(--border); font-family:'IBM Plex Mono',monospace; white-space:nowrap}
+  table td{padding:11px 16px; border-bottom:1px solid var(--border); vertical-align:middle}
+  table td.amt{text-align:right; font-family:'IBM Plex Mono',monospace; white-space:nowrap; color:var(--muted)}
   table th.amt{text-align:right}
-  table td.amt, table th.amt{padding-left:16px}
-  .buy-link{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent); white-space:nowrap}
-  table tr.subtotal td{font-weight:600; padding-top:5px}
-  table tr.total td{font-weight:700; font-size:15px; border-bottom:none; border-top:1px solid var(--text); padding-top:14px}
-  table tr.group td{padding-top:18px; color:var(--muted); font-size:11px; font-family:'IBM Plex Mono',monospace; border-bottom:none; padding-bottom:2px}
+  table td.concepto{color:var(--text)}
+  table td.link-cell{white-space:nowrap; text-align:right}
+  .buy-link{display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); text-decoration:none; border:1px solid var(--accent); border-radius:20px; padding:3px 10px; transition:background .15s, color .15s}
+  .buy-link:hover{background:var(--accent); color:#fff}
+  table tr.subtotal td{font-weight:600; padding-top:9px; padding-bottom:9px; background:var(--surface)}
+  table tr.subtotal td.amt{color:var(--text)}
+  table tr.total td{font-weight:700; font-size:15px; border-bottom:none; border-top:1px solid var(--text); padding-top:16px; padding-bottom:16px}
+  table tr.total td.amt{color:var(--text)}
+  table tr.group td{padding:16px 16px 6px; color:var(--accent); font-size:11px; letter-spacing:0.04em; font-family:'IBM Plex Mono',monospace; border-bottom:none; text-transform:uppercase}
+  table tbody tr:not(.group):not(.subtotal):not(.total):hover{background:var(--surface)}
   .budget-note{margin-top:18px; font-size:13px; color:var(--muted); max-width:640px; padding:12px 16px; border-left:2px solid var(--accent); background:var(--surface)}
   .budget-panel{display:none}
   .budget-panel.active{display:block}
@@ -130,9 +132,9 @@
 <header class="wrap">
   <div class="kicker">Residencia Multidisciplinaria de Creación, San Miguel Almaya, Capulhuac, Estado de México</div>
    <p class="kicker">Postulante: 39913 </p>
-  <h1>XV070</h1>
+ <b>Proyecto:</b> <h1>XV070</h1>
   <div class="meta">
-    <div><b>Disciplina</b>Escultura interactiva</div>
+    <div><b>Disciplina:</b>Escultura interactiva</div>
   </div>
 </header>
 
@@ -212,8 +214,7 @@
     <h2>Corte técnico</h2>
     <p class="tag">posiciones aproximadas sobre la forma real</p>
     <div class="photo-frame">
-      <!-- Reemplaza el src con tu imagen en base64 o URL -->
-      <img src="muckup.jpg" alt="Maqueta real de la diada escultórica">"
+      <img src="muckup.jpg" alt="Maqueta real de la diada escultórica">
       <div class="dot" style="left:37%; top:12%">1</div>
       <div class="dot" style="left:33%; top:28%">2</div>
       <div class="dot" style="left:29%; top:45%">3</div>
@@ -243,8 +244,6 @@
   <h2>Materiales necesarios</h2>
   <div class="mat-box">
      <img src="muckup.jpg" alt="Maqueta real de la diada escultórica">
-
-    <img src="muckup.jpg" alt="Maqueta real de la diada escultórica">
     <div class="mat-list">
       <div class="grp">escultóricos</div>
       <ul>
@@ -307,205 +306,179 @@
   <h2>Presupuesto estimado y desglose de producción</h2>
   <p class="note0">Precios estimados por comparación con proveedores similares; los materiales de adquisición local se ajustan en sitio.</p>
 
+  <div class="table-wrap">
   <table>
     <thead>
       <tr>
-        <th>Categoría</th>
         <th>Concepto</th>
         <th class="amt">Cantidad</th>
         <th class="amt">Precio unitario</th>
         <th class="amt">Subtotal</th>
-        <th>Compra / referencia</th>
+        <th style="text-align:right">Compra</th>
       </tr>
     </thead>
     <tbody>
 
-      <!-- ELECTRÓNICA -->
-      <tr class="group"><td colspan="6">Electrónica</td></tr>
+      <tr class="group"><td colspan="5">Electrónica</td></tr>
       <tr>
-        <td>Electrónica</td>
-        <td>ESP32 DevKit V1</td>
+        <td class="concepto">ESP32 DevKit V1</td>
         <td class="amt">2</td>
         <td class="amt">$150</td>
         <td class="amt">$300</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/esp32-devkit-v1" target="_blank" rel="noopener noreferrer">Ver ESP32</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/esp32-devkit-v1" target="_blank" rel="noopener noreferrer">Ver ESP32</a></td>
       </tr>
       <tr>
-        <td>Electrónica</td>
-        <td>ESP32 de respaldo</td>
+        <td class="concepto">ESP32 de respaldo</td>
         <td class="amt">1</td>
         <td class="amt">$150</td>
         <td class="amt">$150</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/esp32-devkit-v1" target="_blank" rel="noopener noreferrer">Ver ESP32</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/esp32-devkit-v1" target="_blank" rel="noopener noreferrer">Ver ESP32</a></td>
       </tr>
       <tr>
-        <td>Electrónica</td>
-        <td>Módulo LoRa SX1278 + antena</td>
+        <td class="concepto">Módulo LoRa SX1278 + antena</td>
         <td class="amt">2</td>
         <td class="amt">$150</td>
         <td class="amt">$300</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/modulo-lora-sx1278-ra-02" target="_blank" rel="noopener noreferrer">Ver LoRa SX1278</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/modulo-lora-sx1278-ra-02" target="_blank" rel="noopener noreferrer">Ver LoRa</a></td>
       </tr>
       <tr>
-        <td>Electrónica</td>
-        <td>Sensor capacitivo MPR121</td>
+        <td class="concepto">Sensor capacitivo MPR121</td>
         <td class="amt">2</td>
         <td class="amt">$100</td>
         <td class="amt">$200</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/mpr121-sensor-capacitivo" target="_blank" rel="noopener noreferrer">Ver MPR121</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/mpr121-sensor-capacitivo" target="_blank" rel="noopener noreferrer">Ver MPR121</a></td>
       </tr>
       <tr>
-        <td>Electrónica</td>
-        <td>Pasta / tinta conductiva de plata</td>
+        <td class="concepto">Pasta / tinta conductiva de plata</td>
         <td class="amt">6</td>
         <td class="amt">$120</td>
         <td class="amt">$720</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/tinta-conductiva-plata-electronica" target="_blank" rel="noopener noreferrer">Ver tinta conductiva</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/tinta-conductiva-plata-electronica" target="_blank" rel="noopener noreferrer">Ver tinta</a></td>
       </tr>
       <tr>
-        <td>Electrónica</td>
-        <td>Transductor táctil</td>
+        <td class="concepto">Transductor táctil</td>
         <td class="amt">2</td>
         <td class="amt">$250</td>
         <td class="amt">$500</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/transductor-tactil" target="_blank" rel="noopener noreferrer">Ver transductores</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/transductor-tactil" target="_blank" rel="noopener noreferrer">Ver transductores</a></td>
       </tr>
       <tr>
-        <td>Electrónica</td>
-        <td>Amplificador clase D PAM8403</td>
+        <td class="concepto">Amplificador clase D PAM8403</td>
         <td class="amt">2</td>
         <td class="amt">$130</td>
         <td class="amt">$260</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/amplificador-pam8403" target="_blank" rel="noopener noreferrer">Ver PAM8403</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/amplificador-pam8403" target="_blank" rel="noopener noreferrer">Ver PAM8403</a></td>
       </tr>
       <tr>
-        <td>Electrónica</td>
-        <td>Batería LiPo recargable 3.7 V</td>
+        <td class="concepto">Batería LiPo recargable 3.7 V</td>
         <td class="amt">2</td>
         <td class="amt">$200</td>
         <td class="amt">$400</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/bateria-lipo-3.7v-400mah" target="_blank" rel="noopener noreferrer">Ver baterías LiPo</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/bateria-lipo-3.7v-400mah" target="_blank" rel="noopener noreferrer">Ver baterías</a></td>
       </tr>
       <tr>
-        <td>Electrónica</td>
-        <td>Módulo de carga TP4056</td>
+        <td class="concepto">Módulo de carga TP4056</td>
         <td class="amt">2</td>
         <td class="amt">$15</td>
         <td class="amt">$30</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/modulo-tp4056-usb-c" target="_blank" rel="noopener noreferrer">Ver TP4056</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/modulo-tp4056-usb-c" target="_blank" rel="noopener noreferrer">Ver TP4056</a></td>
       </tr>
 
-      <!-- PROTOTIPADO -->
-      <tr class="group"><td colspan="6">Prototipado</td></tr>
+      <tr class="group"><td colspan="5">Prototipado</td></tr>
       <tr>
-        <td>Prototipado</td>
-        <td>Perfboard / placa perforada</td>
+        <td class="concepto">Perfboard / placa perforada</td>
         <td class="amt">2</td>
         <td class="amt">$50</td>
         <td class="amt">$100</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/placa-perforada-perfboard" target="_blank" rel="noopener noreferrer">Ver perfboard</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/placa-perforada-perfboard" target="_blank" rel="noopener noreferrer">Ver perfboard</a></td>
       </tr>
       <tr>
-        <td>Prototipado</td>
-        <td>Cableado electrónico</td>
+        <td class="concepto">Cableado electrónico</td>
         <td class="amt">1 lote</td>
         <td class="amt">$150</td>
         <td class="amt">$150</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/cable-electronico-dupont" target="_blank" rel="noopener noreferrer">Ver cableado</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/cable-electronico-dupont" target="_blank" rel="noopener noreferrer">Ver cableado</a></td>
       </tr>
       <tr>
-        <td>Prototipado</td>
-        <td>Conectores / headers / JST</td>
+        <td class="concepto">Conectores / headers / JST</td>
         <td class="amt">1 lote</td>
         <td class="amt">$150</td>
         <td class="amt">$150</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/conectores-jst-electronica" target="_blank" rel="noopener noreferrer">Ver conectores</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/conectores-jst-electronica" target="_blank" rel="noopener noreferrer">Ver conectores</a></td>
       </tr>
       <tr>
-        <td>Prototipado</td>
-        <td>Termocontráctil / aislantes</td>
+        <td class="concepto">Termocontráctil / aislantes</td>
         <td class="amt">1 lote</td>
         <td class="amt">$100</td>
         <td class="amt">$100</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/tubo-termocontraible" target="_blank" rel="noopener noreferrer">Ver termocontráctil</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/tubo-termocontraible" target="_blank" rel="noopener noreferrer">Ver termocontráctil</a></td>
       </tr>
 
-      <!-- MATERIAL ESCULTÓRICO -->
-      <tr class="group"><td colspan="6">Material escultórico</td></tr>
+      <tr class="group"><td colspan="5">Material escultórico</td></tr>
       <tr>
-        <td>Material escultórico</td>
-        <td>Barro / arcilla · 3 kg</td>
+        <td class="concepto">Barro / arcilla · 3 kg</td>
         <td class="amt">1</td>
         <td class="amt">$250</td>
         <td class="amt">$250</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/barro-arcilla-modelar-3-kg" target="_blank" rel="noopener noreferrer">Ver barro / arcilla</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/barro-arcilla-modelar-3-kg" target="_blank" rel="noopener noreferrer">Ver barro</a></td>
       </tr>
 
-      <!-- HERRAMIENTAS -->
-      <tr class="group"><td colspan="6">Herramientas</td></tr>
+      <tr class="group"><td colspan="5">Herramientas</td></tr>
       <tr>
-        <td>Herramientas</td>
-        <td>Cautín regulable 60 W + soporte</td>
+        <td class="concepto">Cautín regulable 60 W + soporte</td>
         <td class="amt">1</td>
         <td class="amt">$200</td>
         <td class="amt">$200</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/cautin-regulable-60w" target="_blank" rel="noopener noreferrer">Ver cautines</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/cautin-regulable-60w" target="_blank" rel="noopener noreferrer">Ver cautines</a></td>
       </tr>
       <tr>
-        <td>Herramientas</td>
-        <td>Estaño para soldadura</td>
+        <td class="concepto">Estaño para soldadura</td>
         <td class="amt">1 rollo</td>
         <td class="amt">$100</td>
         <td class="amt">$100</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/estaño-soldadura-electronica" target="_blank" rel="noopener noreferrer">Ver estaño</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/estaño-soldadura-electronica" target="_blank" rel="noopener noreferrer">Ver estaño</a></td>
       </tr>
       <tr>
-        <td>Herramientas</td>
-        <td>Consumibles varios</td>
+        <td class="concepto">Consumibles varios</td>
         <td class="amt">1 lote</td>
         <td class="amt">$100</td>
         <td class="amt">$100</td>
-        <td><a class="buy-link" href="https://listado.mercadolibre.com.mx/consumibles-electronica-soldadura" target="_blank" rel="noopener noreferrer">Ver consumibles</a></td>
+        <td class="link-cell"><a class="buy-link" href="https://listado.mercadolibre.com.mx/consumibles-electronica-soldadura" target="_blank" rel="noopener noreferrer">Ver consumibles</a></td>
       </tr>
 
-      <!-- LOGÍSTICA -->
-      <tr class="group"><td colspan="6">Logística</td></tr>
+      <tr class="group"><td colspan="5">Logística</td></tr>
       <tr>
-        <td>Logística</td>
-        <td>Envíos / diferencias de precio</td>
+        <td class="concepto">Envíos / diferencias de precio</td>
         <td class="amt">—</td>
         <td class="amt">—</td>
         <td class="amt">$200</td>
-        <td><span style="color:var(--muted);font-size:12px;">Reserva logística</span></td>
+        <td class="link-cell"><span style="color:var(--muted);font-size:11px;font-family:'IBM Plex Mono',monospace;">Reserva logística</span></td>
       </tr>
 
-      <!-- SUBTOTAL -->
       <tr class="subtotal">
-        <td colspan="4">SUBTOTAL DE COMPRA</td>
+        <td colspan="3">SUBTOTAL DE COMPRA</td>
         <td class="amt">$4,360</td>
         <td></td>
       </tr>
 
-      <!-- RESERVA -->
-      <tr class="group"><td colspan="6">Reserva técnica</td></tr>
+      <tr class="group"><td colspan="5">Reserva técnica</td></tr>
       <tr>
-        <td>Reserva técnica</td>
-        <td>Colchón para reemplazo de componentes, errores de montaje o fallas</td>
+        <td class="concepto">Colchón para reemplazo de componentes, errores de montaje o fallas</td>
         <td class="amt">—</td>
         <td class="amt">—</td>
         <td class="amt">$640</td>
-        <td><span style="color:var(--accent);font-size:12px;">NO gastar inicialmente</span></td>
+        <td class="link-cell"><span style="color:var(--accent);font-size:11px;font-family:'IBM Plex Mono',monospace;">NO gastar</span></td>
       </tr>
 
-      <!-- TOTAL -->
       <tr class="total">
-        <td colspan="4">PRESUPUESTO TOTAL MÁXIMO</td>
+        <td colspan="3">PRESUPUESTO TOTAL MÁXIMO</td>
         <td class="amt">$5,000</td>
-        <td>MXN</td>
+        <td class="link-cell" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">MXN</td>
       </tr>
 
     </tbody>
   </table>
+  </div>
 
   <div class="budget-note">
     <strong>Reserva técnica:</strong> Los $640 MXN no forman parte de la compra inicial. Se mantienen disponibles exclusivamente para reemplazar componentes, corregir errores de montaje, cubrir diferencias de precio o adquirir materiales adicionales indispensables durante el desarrollo del prototipo.
